@@ -2035,6 +2035,9 @@ body {
   width: 100%;
   margin: 0; }
 
+.hidden {
+  display: none; }
+
 .wrapper {
   width: 100%; }
 
@@ -2066,7 +2069,8 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin: 0 auto;
+  border-radius: 5px;
+  margin: 10px auto;
   height: 766px;
   max-width: 500px;
   position: relative; }
@@ -2092,6 +2096,12 @@ button {
   .login .regBtn {
     left: 55%; }
 
+.form {
+  width: 30%;
+  border: 2px solid #213C3F;
+  background-color: #B8AF9E;
+  padding: 10px; }
+
 .deckwrapper {
   width: 100%;
   padding: 50px; }
@@ -2103,7 +2113,7 @@ button {
       display: inline-block;
       border: 2px solid #213C3F;
       background-repeat: no-repeat;
-      background-color: #F5F5F5;
+      background-color: #B8AF9E;
       border-radius: 5px;
       margin: 5px 2% 5px 2%;
       width: 150px;
@@ -2117,11 +2127,13 @@ button {
     width: 70%;
     margin: 0 auto; }
     .deckViewContainer .data .cardContainer {
-      background-color: #F5F5F5;
+      display: inline-block;
+      background-color: #B8AF9E;
       width: 200px;
       height: 250px;
       border: 2px solid #213C3F;
       border-radius: 5px;
+      margin: 5px 2% 5px 2%;
       position: relative; }
       .deckViewContainer .data .cardContainer div {
         position: absolute;
@@ -2139,5 +2151,32 @@ button {
     .deckViewContainer .btns button {
       width: 20%;
       margin-left: 10%; }
+
+.cardWrap {
+  width: 100%; }
+
+.registerWrap {
+  width: 100%; }
+  .registerWrap .signup {
+    width: 50%;
+    height: 400px;
+    border: 2px solid #213C3F;
+    border-radius: 5px;
+    background-color: #B8AF9E;
+    margin: 0 auto;
+    padding: 20px 0 0 5%; }
+    .registerWrap .signup form {
+      margin-left: auto;
+      position: relative; }
+  .registerWrap .regfield {
+    display: inline-block;
+    margin: 5px auto 5px auto;
+    width: 100%; }
+    .registerWrap .regfield .span {
+      width: 200px;
+      display: inline-block; }
+    .registerWrap .regfield input {
+      line-height: 1.4em;
+      width: 50%; }
 
 /*# sourceMappingURL=main.css.map */

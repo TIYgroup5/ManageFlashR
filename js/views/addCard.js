@@ -33,17 +33,19 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-        <form>
-          <h2>Question</h2>
-          <input type="textarea" 
-            onChange={this.updateQuestion} />
-          <h2>Answer</h2>
-          <input type="text" 
-            onChange={this.updateAnswer} />
-          <button onClick={this.cancelHandler}>Cancel</button>
-          <input type="submit" value="Save Card" onClick={this.submitHandler}></input>
-        </form>
+      <div className='cardWrap'>
+        <div className='addCard form'>
+          <form className='addForm'>
+            <h2>Question</h2>
+            <input type="textarea" 
+              onChange={this.updateQuestion} />
+            <h2>Answer</h2>
+            <input type="text" 
+              onChange={this.updateAnswer} />
+            <button onClick={this.cancelHandler}>Cancel</button>
+            <button type="submit" value="Save Card" onClick={this.submitHandler}>Save Card</button>
+          </form>
+        </div>
       </div>
     );
   }

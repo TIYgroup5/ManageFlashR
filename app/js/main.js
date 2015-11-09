@@ -375,9 +375,18 @@ var Router = _backbone2['default'].Router.extend({
 
   // Login Page and function, Login check, Logout.
 
+  hideBanner: function hideBanner() {
+    (0, _jquery2['default'])('.banner').addClass('hidden');
+  },
+
+  showBanner: function showBanner() {
+    (0, _jquery2['default'])('.banner').removeClass('hidden');
+  },
+
   loginPage: function loginPage() {
     var _this2 = this;
 
+    this.hideBanner();
     _reactDom2['default'].render(_react2['default'].createElement(_views.LoginPage, {
       user: _jsCookie2['default'].getJSON('user'),
       onLoginClick: function (user, pass) {
@@ -392,6 +401,7 @@ var Router = _backbone2['default'].Router.extend({
   login: function login(user, pass) {
     var _this3 = this;
 
+    this.showBanner();
     var request = _jquery2['default'].ajax({
       url: 'https://rocky-garden-9800.herokuapp.com/login',
       method: 'POST',
@@ -446,6 +456,7 @@ var Router = _backbone2['default'].Router.extend({
   registerPage: function registerPage() {
     var _this4 = this;
 
+    this.showBanner();
     this.render(_react2['default'].createElement(
       'wrap',
       null,
@@ -693,20 +704,20 @@ exports['default'] = Router;
 module.exports = exports['default'];
 
 },{"./resources":7,"./views":15,"backbone":20,"jquery":22,"js-cookie":23,"moment":24,"react":181,"react-dom":25,"underscore":182}],11:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-exports["default"] = _react2["default"].createClass({
-  displayName: "addCard",
+exports['default'] = _react2['default'].createClass({
+  displayName: 'addCard',
 
   submitHandler: function submitHandler(e) {
     e.preventDefault();
@@ -737,37 +748,45 @@ exports["default"] = _react2["default"].createClass({
   },
 
   render: function render() {
-    return _react2["default"].createElement(
-      "div",
-      null,
-      _react2["default"].createElement(
-        "form",
-        null,
-        _react2["default"].createElement(
-          "h2",
-          null,
-          "Question"
-        ),
-        _react2["default"].createElement("input", { type: "textarea",
-          onChange: this.updateQuestion }),
-        _react2["default"].createElement(
-          "h2",
-          null,
-          "Answer"
-        ),
-        _react2["default"].createElement("input", { type: "text",
-          onChange: this.updateAnswer }),
-        _react2["default"].createElement(
-          "button",
-          { onClick: this.cancelHandler },
-          "Cancel"
-        ),
-        _react2["default"].createElement("input", { type: "submit", value: "Save Card", onClick: this.submitHandler })
+    return _react2['default'].createElement(
+      'div',
+      { className: 'cardWrap' },
+      _react2['default'].createElement(
+        'div',
+        { className: 'addCard form' },
+        _react2['default'].createElement(
+          'form',
+          { className: 'addForm' },
+          _react2['default'].createElement(
+            'h2',
+            null,
+            'Question'
+          ),
+          _react2['default'].createElement('input', { type: 'textarea',
+            onChange: this.updateQuestion }),
+          _react2['default'].createElement(
+            'h2',
+            null,
+            'Answer'
+          ),
+          _react2['default'].createElement('input', { type: 'text',
+            onChange: this.updateAnswer }),
+          _react2['default'].createElement(
+            'button',
+            { onClick: this.cancelHandler },
+            'Cancel'
+          ),
+          _react2['default'].createElement(
+            'button',
+            { type: 'submit', value: 'Save Card', onClick: this.submitHandler },
+            'Save Card'
+          )
+        )
       )
     );
   }
 });
-module.exports = exports["default"];
+module.exports = exports['default'];
 
 },{"react":181}],12:[function(require,module,exports){
 //this view allows you to add a deck
@@ -814,25 +833,29 @@ exports['default'] = _react2['default'].createClass({
       'div',
       { className: 'addDeckContainer' },
       _react2['default'].createElement(
-        'button',
-        { className: 'backBtn', onClick: function () {
-            return _this.backBtnHandler();
-          } },
-        'back'
-      ),
-      _react2['default'].createElement(
-        'h1',
-        null,
-        ' Enter your deck title: '
-      ),
-      _react2['default'].createElement(
-        'form',
-        null,
-        _react2['default'].createElement('input', { type: 'text', placeholder: 'Title', className: 'enterTitle', onChange: this.updateTitle }),
+        'div',
+        { className: 'addDeck form' },
         _react2['default'].createElement(
           'button',
-          { onClick: this.submitHandler },
-          'Submit'
+          { className: 'backBtn', onClick: function () {
+              return _this.backBtnHandler();
+            } },
+          'back'
+        ),
+        _react2['default'].createElement(
+          'h1',
+          null,
+          ' Enter your deck title: '
+        ),
+        _react2['default'].createElement(
+          'form',
+          null,
+          _react2['default'].createElement('input', { type: 'text', placeholder: 'Title', className: 'enterTitle', onChange: this.updateTitle }),
+          _react2['default'].createElement(
+            'button',
+            { onClick: this.submitHandler },
+            'Submit'
+          )
         )
       )
     );
@@ -1297,35 +1320,60 @@ exports['default'] = _react2['default'].createClass({
           null,
           _react2['default'].createElement(
             'label',
-            null,
-            'Full Name: ',
+            { className: 'regfield' },
+            _react2['default'].createElement(
+              'span',
+              { className: 'span' },
+              'Full Name: '
+            ),
             _react2['default'].createElement('input', { onChange: this.updateFullname, id: 'fullname', type: 'text', className: 'fullname' })
           ),
           _react2['default'].createElement(
             'label',
-            null,
-            'Email: ',
+            { className: 'regfield' },
+            _react2['default'].createElement(
+              'span',
+              { className: 'span' },
+              'Email: '
+            ),
             _react2['default'].createElement('input', { onChange: this.updateEmail, id: 'email', type: 'text', className: 'email' })
           ),
           _react2['default'].createElement(
             'label',
-            null,
-            'Username: ',
+            { className: 'regfield' },
+            _react2['default'].createElement(
+              'span',
+              { className: 'span' },
+              'Username: '
+            ),
             _react2['default'].createElement('input', { onChange: this.updateUsername, id: 'username', type: 'text', className: 'user' })
           ),
           _react2['default'].createElement(
             'label',
-            null,
-            'Password: ',
+            { className: 'regfield' },
+            _react2['default'].createElement(
+              'span',
+              { className: 'span' },
+              'Password: '
+            ),
             _react2['default'].createElement('input', { onChange: this.updatePassword, id: 'password', type: 'password', className: 'password' })
           ),
+          _react2['default'].createElement('br', null),
           _react2['default'].createElement(
             'label',
-            null,
-            'Enter Your Password Again: ',
+            { className: 'regfield' },
+            _react2['default'].createElement(
+              'span',
+              { className: 'span' },
+              'Re-enter Password: '
+            ),
             _react2['default'].createElement('input', { type: 'password', className: 'pass2' })
           ),
-          _react2['default'].createElement('button', { id: 'registerUser', onClick: this.registerHandler, value: 'Register' })
+          _react2['default'].createElement(
+            'button',
+            { id: 'registerUser', onClick: this.registerHandler, value: 'Register' },
+            'Register'
+          )
         )
       )
     );
