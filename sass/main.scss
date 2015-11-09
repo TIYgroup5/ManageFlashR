@@ -111,6 +111,7 @@ button {
 .form {
  width: 30%;
  border: $boxborder;
+ border-radius: 5px;
  background-color: $boxfill;
  padding: 10px;
 }
@@ -136,9 +137,24 @@ button {
       overflow: hidden;
     }
   }
+}
+
+.addDeckContainer {
+  width: 100%;
 
   .addDeck {
-    
+    margin: 15px auto;
+
+    form {
+      margin: 10px auto;
+      width: 100%;
+
+      input {
+        line-height: 1.4em;
+        width: 80%;
+        margin: 5px auto;
+      }
+    }
   }
 }
 
@@ -191,7 +207,19 @@ button {
   width: 100%;
 
   .addCard {
+    margin: 0 auto;
 
+    .addForm {
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 100%;
+
+      input {
+        line-height: 1.4em;
+        width: 80%;
+        margin: 5px auto;
+      }
+    }
   }
 }
 

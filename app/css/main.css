@@ -2099,6 +2099,7 @@ button {
 .form {
   width: 30%;
   border: 2px solid #213C3F;
+  border-radius: 5px;
   background-color: #B8AF9E;
   padding: 10px; }
 
@@ -2119,6 +2120,18 @@ button {
       width: 150px;
       height: 150px;
       overflow: hidden; }
+
+.addDeckContainer {
+  width: 100%; }
+  .addDeckContainer .addDeck {
+    margin: 15px auto; }
+    .addDeckContainer .addDeck form {
+      margin: 10px auto;
+      width: 100%; }
+      .addDeckContainer .addDeck form input {
+        line-height: 1.4em;
+        width: 80%;
+        margin: 5px auto; }
 
 .deckViewContainer {
   width: 100%;
@@ -2154,6 +2167,16 @@ button {
 
 .cardWrap {
   width: 100%; }
+  .cardWrap .addCard {
+    margin: 0 auto; }
+    .cardWrap .addCard .addForm {
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 100%; }
+      .cardWrap .addCard .addForm input {
+        line-height: 1.4em;
+        width: 80%;
+        margin: 5px auto; }
 
 .registerWrap {
   width: 100%; }

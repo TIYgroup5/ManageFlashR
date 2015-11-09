@@ -28,10 +28,10 @@ backBtnHandler(){
     return(
       <div className='addDeckContainer'>
         <div className='addDeck form'>
-          <button className='backBtn' onClick={() => this.backBtnHandler()}>back</button>
+          <button className='backBtn' onClick={() => this.backBtnHandler()}>Back</button>
        
           <h1> Enter your deck title: </h1>
-          <form>
+          <form className='addForm'>
             <input type='text' placeholder='Title' className='enterTitle' onChange={this.updateTitle}></input>
             <button onClick={this.submitHandler}>Submit</button>
           </form>

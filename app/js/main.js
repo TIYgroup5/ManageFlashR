@@ -840,7 +840,7 @@ exports['default'] = _react2['default'].createClass({
           { className: 'backBtn', onClick: function () {
               return _this.backBtnHandler();
             } },
-          'back'
+          'Back'
         ),
         _react2['default'].createElement(
           'h1',
@@ -849,7 +849,7 @@ exports['default'] = _react2['default'].createClass({
         ),
         _react2['default'].createElement(
           'form',
-          null,
+          { className: 'addForm' },
           _react2['default'].createElement('input', { type: 'text', placeholder: 'Title', className: 'enterTitle', onChange: this.updateTitle }),
           _react2['default'].createElement(
             'button',
