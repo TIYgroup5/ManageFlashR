@@ -115,18 +115,28 @@ let Router = Backbone.Router.extend({
 
 // Login Page and function, Login check, Logout.
 
+  hideBanner() {
+    $('.banner').addClass('hidden')
+  },
+
+  showBanner() {
+    $('.banner').removeClass('hidden')
+  },
+
   loginPage() {
+    this.hideBanner();
     ReactDom.render(
       <LoginPage
         user={Cookies.getJSON('user')}
-        onLoginClick={(user,pass)=>this.login(user,pass)}
+        onLoginClick={(user,pass) =>  this.login(user,pass)}
         // onLogoutClick={() => this.navigate('logout', {trigger: true})}
-        onRegisterClick={() => this.navigate('registerPage', {trigger: true})}/>,
+        onRegisterClick={() =>  this.navigate('registerPage', {trigger: true})}/>,
         document.querySelector('.app')
     );
   },
 
   login(user,pass) {
+    this.showBanner();
     let request = $.ajax({
       url: `https://rocky-garden-9800.herokuapp.com/login`,
       method: 'POST',
@@ -179,6 +189,7 @@ let Router = Backbone.Router.extend({
 // Registration
 
   registerPage() {
+    this.showBanner();
     this.render(
       <wrap>
         <NavView

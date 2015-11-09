@@ -53,12 +53,12 @@ export default React.createClass({
         <div className="signup">
           <h2>Create a new Account</h2>
           <form>
-            <label>Full Name: <input onChange={this.updateFullname} id='fullname' type="text" className="fullname"/></label>
-            <label>Email: <input onChange={this.updateEmail} id='email' type="text" className="email"/></label>
-            <label>Username: <input onChange={this.updateUsername} id='username' type="text" className="user"/></label>
-            <label>Password: <input onChange={this.updatePassword} id='password' type="password" className="password"/></label>
-            <label>Enter Your Password Again: <input type="password" className="pass2"/></label>
-            <button id='registerUser' onClick={this.registerHandler} value='Register'></button>
+            <label className='regfield'><span className='span'>Full Name: </span><input onChange={this.updateFullname} id='fullname' type="text" className="fullname"/></label>
+            <label className='regfield'><span className='span'>Email: </span><input onChange={this.updateEmail} id='email' type="text" className="email"/></label>
+            <label className='regfield'><span className='span'>Username: </span><input onChange={this.updateUsername} id='username' type="text" className="user"/></label>
+            <label className='regfield'><span className='span'>Password: </span><input onChange={this.updatePassword} id='password' type="password" className="password"/></label><br/>
+            <label className='regfield'><span className='span'>Re-enter Password: </span><input type="password" className="pass2"/></label>
+            <button id='registerUser' onClick={this.registerHandler} value='Register'>Register</button>
           </form>
         </div>
       </div>

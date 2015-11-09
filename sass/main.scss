@@ -5,7 +5,7 @@
 $bg: #5E7686;
 $navbg: #729DA9;
 $grey: #213C3F;
-
+$boxfill: #B8AF9E;
 $boxborder: 2px solid $grey;
 
 
@@ -20,6 +20,10 @@ body {
   min-height: 150px;
   width: 100%;
   margin: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 .wrapper {
@@ -64,7 +68,8 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin: 0 auto;
+  border-radius: 5px;
+  margin: 10px auto;
   height: 766px;
   max-width: 500px;
   position: relative;
@@ -103,6 +108,14 @@ button {
   }
 }
 
+.form {
+ width: 30%;
+ border: $boxborder;
+ border-radius: 5px;
+ background-color: $boxfill;
+ padding: 10px;
+}
+
 .deckwrapper {
   width: 100%;
   padding: 50px;
@@ -116,7 +129,7 @@ button {
       display: inline-block;
       border: $boxborder;
       background-repeat: no-repeat;
-      background-color: #F5F5F5;
+      background-color: $boxfill;
       border-radius: 5px;
       margin: 5px 2% 5px 2%;
       width: 150px;
@@ -124,9 +137,24 @@ button {
       overflow: hidden;
     }
   }
+}
+
+.addDeckContainer {
+  width: 100%;
 
   .addDeck {
-    
+    margin: 15px auto;
+
+    form {
+      margin: 10px auto;
+      width: 100%;
+
+      input {
+        line-height: 1.4em;
+        width: 80%;
+        margin: 5px auto;
+      }
+    }
   }
 }
 
@@ -139,11 +167,13 @@ button {
     margin: 0 auto;
 
     .cardContainer {
-      background-color: #F5F5F5;
+      display: inline-block;
+      background-color: $boxfill;
       width: 200px;
       height: 250px;
       border: $boxborder;
       border-radius: 5px;
+      margin: 5px 2% 5px 2%;
       position: relative;
 
       div {
@@ -169,6 +199,66 @@ button {
     button {
       width: 20%;
       margin-left: 10%;
+    }
+  }
+}
+
+.cardWrap {
+  width: 100%;
+
+  .addCard {
+    margin: 0 auto;
+
+    .addForm {
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 100%;
+
+      input {
+        line-height: 1.4em;
+        width: 80%;
+        margin: 5px auto;
+      }
+    }
+  }
+}
+
+
+
+.registerWrap {
+  width: 100%;
+
+  .signup {
+    width: 50%;
+    height: 400px;
+    border: $boxborder;
+    border-radius: 5px;
+    background-color: $boxfill;
+    margin: 0 auto;
+    padding: 20px 0 0 5%;
+
+    form {
+      margin-left: auto;
+      position: relative;
+
+      button {
+      }
+    }
+  }
+
+  .regfield {
+    display: inline-block;
+    margin: 5px auto 5px auto;
+    width: 100%;
+
+    .span {
+      width: 200px;
+      display: inline-block;
+    }
+
+    input {
+      line-height: 1.4em;
+      width: 50%;
     }
   }
 }
